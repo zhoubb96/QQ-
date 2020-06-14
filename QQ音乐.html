@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,
+  maximum-scale=1.0">
+  <title>Title</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  html,body{
+    height: 100%;
+    overflow: hidden;
+  }
+  #wrap>.head{
+    width: 100%;
+    height: 100px;
+    background: deeppink;
+  }
+
+</style>
+<body>
+<div id="wrap">
+  <div class="head">
+
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  window.onload = function () {
+    document.addEventListener("touchstart",function (ev) {
+      ev=ev||event
+      ev.preventDefault()
+    })
+
+    ;(function () {
+      let styleNode=document.createElement("style")
+      let w=document.documentElement.clientWidth/16
+      styleNode.innerHTML="html{font-size"+w+"px!important}"
+      document.head.appendChild(styleNode)
+    })()
+  }
+</script>
+</body>
+</html>
